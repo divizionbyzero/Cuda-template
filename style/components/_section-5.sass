@@ -1,0 +1,44 @@
+.section-5
+  background-color: #d74680
+  padding: 120px 0
+  text-align: center
+  &__title
+    @extend .big-title-2
+    color: $white
+    margin-bottom: 45px
+  &__subtitle
+    @extend .subtitle
+    color: $white
+    margin: 0 250px 75px
+  &_list
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+  &_item
+    width: 45%
+    display: flex
+    flex-flow: row nowrap
+    justify-content: space-between
+    margin-bottom: 50px
+    &_text-wrap
+      display: flex
+      flex-flow: column nowrap
+    &_photo-wrap
+      width: 100px
+      margin-right: 50px
+    &__text
+      font-size: 17.5px
+      color: $white
+      font-style: italic
+      line-height: 1.486
+      text-align: left
+      margin-bottom: 20px
+    &__name
+      @extend .list-title-1
+      text-align: left
+      margin-bottom: 10px
+    &__position
+      font-size: $main-font-size
+      color: #ffdd99
+      line-height: 1.125
+      text-align: left

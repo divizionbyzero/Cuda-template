@@ -1,0 +1,31 @@
+.section-4
+  background-color: #ffdd99
+  padding: 120px 0
+  text-align: center
+  &__title
+    @extend .big-title-2
+    color: $black
+    margin-bottom: 45px
+  &__subtitle
+    @extend .subtitle
+    color: $black
+    margin: 0 250px 75px
+  &_tabs
+    margin-bottom: 60px
+    &__tab
+      @extend .tab
+      background-color: #ebc985
+      color: $black
+  &_pictures
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+  &_picture-wrap
+    display: inline-block
+    margin-bottom: 55px
+  &__caption
+    @extend .figcaption
+    margin-top: 20px
+  &__button
+    @extend .big-button
+    @extend .green-button
