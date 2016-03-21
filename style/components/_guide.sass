@@ -2,7 +2,8 @@
   font-size: $main-font-size
   color: $white
   text-transform: uppercase
-  line-height: 1.125
+  height: 2 * $main-font-size
+  line-height: 2
   text-align: left
   display: inline-block
   &:hover
@@ -15,7 +16,6 @@
   color: $white-title
   font-weight: bold
   line-height: 1.158
-  text-transform: uppercase
 
 .big-title-2
   font-size: 40px
@@ -24,6 +24,18 @@
   line-height: 0.748
   letter-spacing: .1em
   text-transform: uppercase
+  position: relative
+  &:after
+    position: absolute
+    content: ""
+    display: block
+    background-color: #000
+    opacity: 0.149
+    width: 87px
+    height: 4px
+    left: 50%
+    margin-left: -43.5px
+    bottom: -27px
 
 .subtitle
   font-size: 18px
@@ -81,14 +93,10 @@
   padding: 0 80px
   height: 56px
 
-.orange-button
-  background-color: #eb7d4b
-  border-color: #c86a40
-
-.green-button
-  background-color: $green
-  border-color: #14a58c
-
-.blue-button
-  background-color: #30bae7
-  border-color: #299ec5
+@each $i, $bgc, $bdc, $percent in ('orange', #eb7d4b, #c86a40, -5%), ('green', $green, #14a58c, -5%), ('blue',#30bae7, #299ec5, -5%)
+  .#{$i}-button
+    background-color: $bgc
+    border-color: $bdc
+    &:hover
+      background-color: scale_color($bgc, $lightness: $percent)
+      border-color: scale_color($bdc, $lightness: $percent)
