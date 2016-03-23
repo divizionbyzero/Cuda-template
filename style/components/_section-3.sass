@@ -1,3 +1,5 @@
+$circle-diameter: 160px
+
 .section-3
   background-color: $white
   padding: 120px 0
@@ -15,3 +17,98 @@
     &__title
       @extend .list-title-1
       color: $dark-blue
+      margin-top: 30px
+  &_round-range
+    width: $circle-diameter
+    height: $circle-diameter
+    position: relative
+    margin: 0 auto
+  &_round_value
+    position: absolute
+    font-size: 58px
+    color: $dark-blue
+    top: 50%
+    line-height: 80px
+    margin-top: -40px
+    display: block
+    width: 100%
+    &:after
+      content: '%'
+      font-size: 32px
+      vertical-align: middle
+
+.wrapper
+  width: $circle-diameter
+  /* Set the size of the progress bar
+  height: $circle-diameter
+  position: absolute
+  /* Enable clipping
+  clip: rect(0px, $circle-diameter, $circle-diameter, $circle-diameter/2)
+/* Hide half of the progress bar
+
+/* Set the sizes of the elements that make up the progress bar
+
+.circle
+  width: $circle-diameter
+  height: $circle-diameter
+  border: 13px solid
+  border-radius: 50%
+  position: absolute
+  clip: rect(0px, $circle-diameter/2, $circle-diameter, 0px)
+
+@each $name, $color in ('blue', #30bae7), ('red', #d74680), ('green', #15c7a8), ('orange', #eb7d4b), ('gray', #dfe8ed)
+  .circle--#{$name}
+    @extend .circle
+    border-color: $color
+
+
+/* Using the data attributes for the animation selectors.
+/* Base settings for all animated elements
+
+div[data-anim~=base]
+  -webkit-animation-iteration-count: 1
+  /* Only run once
+  -webkit-animation-fill-mode: forwards
+  /* Hold the last keyframe
+  -webkit-animation-timing-function: linear
+/* Linear animation
+
+.wrapper[data-anim~=wrapper]
+  -webkit-animation-duration: 0.01s
+  /* Complete keyframes asap
+  -webkit-animation-delay: 3s
+  /* Wait half of the animation
+  -webkit-animation-name: close-wrapper
+/* Keyframes name
+
+.circle
+  &[data-anim~=left]
+    -webkit-animation-duration: 6s
+    /* Full animation time
+    -webkit-animation-name: left-spin
+  &[data-anim~=right]
+    -webkit-animation-duration: 3s
+    /* Half animation time
+    -webkit-animation-name: right-spin
+
+/* Rotate the right side of the progress bar from 0 to 180 degrees
+@-webkit-keyframes right-spin
+  from
+    -webkit-transform: rotate(0deg)
+
+  to
+    -webkit-transform: rotate(180deg)
+
+
+/* Rotate the left side of the progress bar from 0 to 360 degrees
+@-webkit-keyframes left-spin
+  from
+    -webkit-transform: rotate(0deg)
+
+  to
+    -webkit-transform: rotate(360deg)
+
+/* Set the wrapper clip to auto, effectively removing the clip
+@-webkit-keyframes close-wrapper
+  to
+    clip: rect(auto, auto, auto, auto)
