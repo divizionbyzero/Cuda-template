@@ -23,6 +23,19 @@ $circle-diameter: 160px
     height: $circle-diameter
     position: relative
     margin: 0 auto
+  &_round_value
+    position: absolute
+    font-size: 58px
+    color: $dark-blue
+    top: 50%
+    line-height: 80px
+    margin-top: -40px
+    display: block
+    width: 100%
+    &:after
+      content: '%'
+      font-size: 32px
+      vertical-align: middle
 
 .wrapper
   width: $circle-diameter
@@ -94,7 +107,6 @@ div[data-anim~=base]
 
   to
     -webkit-transform: rotate(360deg)
-
 
 /* Set the wrapper clip to auto, effectively removing the clip
 @-webkit-keyframes close-wrapper
