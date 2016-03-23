@@ -1,0 +1,59 @@
++keyframes (slideDown)
+  from
+    transform: translateY(-300px)
+  to
+    transform: translateY(0)
+
++keyframes (slideUp)
+  from
+    transform: translateY(100%)
+  to
+    transform: translateY(0)
+
++keyframes (fadeIn)
+  from
+    opacity: 0
+    visibility: hidden
+  to
+    opacity: 1
+    visibility: visible
+
++keyframes (submarineFadeIn)
+  from
+    transform: translateY(-300px) scale(.95)
+    opacity: 0
+    visibility: hidden
+  to
+    transform: translateY(0px) scale(1)
+    opacity: .9
+    visibility: visible
+
+
++keyframes (bounceInUp)
+  from,
+  60%,
+  75%,
+  90%,
+  to
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000)
+  from
+    opacity: 0
+    transform: translate3d(0, 3000px, 0)
+  60%
+    opacity: 1
+    transform: translate3d(0, -20px, 0)
+  75%
+    transform: translate3d(0, 10px, 0)
+
+  90%
+    transform: translate3d(0, -5px, 0)
+  to
+    transform: translate3d(0, 0, 0)
+
++keyframes (submarineFadeIn)
+  from
+    transform: translateY(-300px) scale(.95)
+    visibility: hidden
+  to
+    transform: translateY(0px) scale(1)
+    visibility: visible

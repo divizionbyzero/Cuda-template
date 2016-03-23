@@ -11,7 +11,7 @@ $circle-diameter: 160px
   &__subtitle
     @extend .subtitle
     color: $dark-blue
-    margin: 0 250px 75px
+    margin: 0 $margin-lr $margin-b
   &_item
     display: inline-block
     &__title
@@ -39,14 +39,9 @@ $circle-diameter: 160px
 
 .wrapper
   width: $circle-diameter
-  /* Set the size of the progress bar
   height: $circle-diameter
   position: absolute
-  /* Enable clipping
   clip: rect(0px, $circle-diameter, $circle-diameter, $circle-diameter/2)
-/* Hide half of the progress bar
-
-/* Set the sizes of the elements that make up the progress bar
 
 .circle
   width: $circle-diameter
@@ -61,6 +56,12 @@ $circle-diameter: 160px
     @extend .circle
     border-color: $color
 
+.circle--gray
+  clip: initial
+  position: absolute
+  top: 0
+  left: 50%
+  margin-left: -$circle-diameter/2
 
 /* Using the data attributes for the animation selectors.
 /* Base settings for all animated elements
