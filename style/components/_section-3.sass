@@ -63,53 +63,41 @@ $circle-diameter: 160px
   left: 50%
   margin-left: -$circle-diameter/2
 
-/* Using the data attributes for the animation selectors.
-/* Base settings for all animated elements
+$anim-full-time: 3s
 
 div[data-anim~=base]
-  -webkit-animation-iteration-count: 1
-  /* Only run once
-  -webkit-animation-fill-mode: forwards
-  /* Hold the last keyframe
-  -webkit-animation-timing-function: linear
-/* Linear animation
+  +animation-iteration-count(1)
+  +animation-fill-mode(forwards)
+  +animation-timing-function(linear)
 
 .wrapper[data-anim~=wrapper]
-  -webkit-animation-duration: 0.01s
-  /* Complete keyframes asap
-  -webkit-animation-delay: 3s
-  /* Wait half of the animation
-  -webkit-animation-name: close-wrapper
-/* Keyframes name
+  +animation-duration(0.01s)
+  +animation-delay($anim-full-time/2)
+  +animation-name(close-wrapper)
 
 .circle
-  &[data-anim~=left]
-    -webkit-animation-duration: 6s
-    /* Full animation time
-    -webkit-animation-name: left-spin
   &[data-anim~=right]
-    -webkit-animation-duration: 3s
-    /* Half animation time
-    -webkit-animation-name: right-spin
+    +animation-duration($anim-full-time/2)
+    +animation-name(right-spin)
 
-/* Rotate the right side of the progress bar from 0 to 180 degrees
 @-webkit-keyframes right-spin
   from
-    -webkit-transform: rotate(0deg)
-
+    +transform(rotate(0deg))
   to
-    -webkit-transform: rotate(180deg)
+    +transform(rotate(180deg))
 
+@each $i in 90, 75, 70, 85
+  $j: (100 - $i) * 3.6
+  @-webkit-keyframes left-spin-#{$i}
+    from
+      +transform(rotate($j+deg))
+    to
+      +transform(rotate(360deg - $j))
+  .circle
+    &[data-anim~=l#{$i}]
+      +animation-duration($anim-full-time)
+      +animation-name(left-spin-#{$i})
 
-/* Rotate the left side of the progress bar from 0 to 360 degrees
-@-webkit-keyframes left-spin
-  from
-    -webkit-transform: rotate(0deg)
-
-  to
-    -webkit-transform: rotate(360deg)
-
-/* Set the wrapper clip to auto, effectively removing the clip
 @-webkit-keyframes close-wrapper
   to
     clip: rect(auto, auto, auto, auto)
