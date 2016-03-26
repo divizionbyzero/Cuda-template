@@ -1,22 +1,20 @@
 .section-2
+  @extend .section
   background-color: $white-blue
-  padding: 120px 0
-  text-align: center
   &__title
     @extend .big-title-2
     color: $dark-blue
-    margin-bottom: 45px
   &__subtitle
     @extend .subtitle
     color: $dark-blue
-    margin: 0 $margin-lr $margin-b
   &_item
     display: inline-block
     &__img
       width: 100%
       display: inline-block
       +border-radius(50%)
-      margin-bottom: 30px
+      margin-bottom: 10px
+      max-width: 200px
     &__title
       @extend .list-title-1
       color: $dark-blue
@@ -29,4 +27,9 @@
     &__description
       @extend .list-text
       color: $dark-blue
-      margin: 0 40px
+
+@media screen and (max-width: $xs)
+  .section-2
+    &_item
+      &__subtitle
+        font-size: 14px

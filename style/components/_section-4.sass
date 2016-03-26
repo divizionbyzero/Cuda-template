@@ -1,21 +1,22 @@
 .section-4
+  @extend .section
   background-color: #ffdd99
-  padding: 120px 0
-  text-align: center
   &__title
     @extend .big-title-2
     color: $black
-    margin-bottom: 45px
   &__subtitle
     @extend .subtitle
     color: $black
-    margin: 0 $margin-lr $margin-b
   &_tabs
     margin-bottom: 60px
     &__tab
       @extend .tab
       background-color: #ebc985
       color: $black
+      margin-bottom: 20px
+      &:hover
+        background-color: #fff
+        cursor: pointer
   &_pictures
     display: flex
     flex-flow: row wrap

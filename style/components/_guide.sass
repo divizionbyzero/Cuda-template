@@ -21,10 +21,11 @@
   font-size: 40px
   color: $white
   font-weight: bold
-  line-height: 0.748
+  line-height: 1.2
   letter-spacing: .1em
   text-transform: uppercase
   position: relative
+  margin-bottom: 45px
   &:after
     position: absolute
     content: ""
@@ -43,13 +44,14 @@
   line-height: 1.444
   text-align: center
   letter-spacing: .02em
+  margin: 0 $margin-lr $margin-b
 
 .list-title-1
   font-size: 24px
   color: $white
   font-weight: bold
   text-transform: uppercase
-  line-height: 0.75
+  line-height: 1.2
   letter-spacing: .02em
 
 .list-text
@@ -57,6 +59,7 @@
   color: $white
   line-height: 1.5
   text-align: center
+  margin: 0 10%
 
 .list-subtitle-2
   font-size: $main-font-size
@@ -93,10 +96,32 @@
   padding: 0 80px
   height: 56px
 
-@each $i, $bgc, $bdc, $percent in ('orange', #eb7d4b, #c86a40, -5%), ('green', $green, #14a58c, -5%), ('blue',#30bae7, #299ec5, -5%)
+.section
+  padding: 120px 0
+  text-align: center
+
+@each $i, $bgc, $bdc, $percent in ('orange', #eb7d4b, #c86a40, -5%), ('green', $green, #14a58c, -10%), ('blue',#30bae7, #299ec5, -10%)
   .#{$i}-button
     background-color: $bgc
     border-color: $bdc
     &:hover
       background-color: scale_color($bgc, $lightness: $percent)
       border-color: scale_color($bdc, $lightness: $percent)
+
+@media screen and (max-width: $md)
+  .list-title-1
+    font-size: 20px
+  .section
+    padding: 80px 0
+  .subtitle
+    margin: 0 10% 30px
+  .big-title-2
+    font-size: 34px
+  .big-button
+    padding: 0 50px
+
+@media screen and (max-width: $xs)
+  .list-title-1
+    font-size: 16px
+  .tab
+    padding: 0 10px

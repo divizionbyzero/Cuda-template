@@ -4,7 +4,13 @@
       h6.section-6__subtitle 1600 Pennsylvania Ave NW, Washington, DC 20500, United States of America. Tel: (202) 456-1111
    .section-6_form_wrap
       form.section-6_form
-         input.section-6_form__input(type='text')
-         input.section-6_form__input(type='text')
-         textarea.section-6_form__textarea(rows='10')
+         .section-6_form_wrap-input.col-xs-6.nopadding
+            input.section-6_form__input(type='text', id='name', name='name', required='required')
+            label(for='name') Your Name
+         .section-6_form_wrap-input.col-xs-6.nopadding
+            input.section-6_form__input(type='text', id='email', name='email', required='required')
+            label(for='email') Your Email
+         .section-6_form_wrap-input.col-xs-12.nopadding
+            textarea.section-6_form__textarea(rows='10',id='message', name='message', required='required')
+            label(for='message') Your Message
    button.section-6__button send message

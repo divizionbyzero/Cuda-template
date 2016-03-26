@@ -1,17 +1,13 @@
 $circle-diameter: 160px
-
 .section-3
+  @extend .section
   background-color: $white
-  padding: 120px 0
-  text-align: center
   &__title
     @extend .big-title-2
     color: $dark-blue
-    margin-bottom: 45px
   &__subtitle
     @extend .subtitle
     color: $dark-blue
-    margin: 0 $margin-lr $margin-b
   &_item
     display: inline-block
     &__title
@@ -49,6 +45,7 @@ $circle-diameter: 160px
   border: 13px solid
   border-radius: 50%
   position: absolute
+  clip-path: rect(0px, $circle-diameter/2, $circle-diameter, 0px)
   clip: rect(0px, $circle-diameter/2, $circle-diameter, 0px)
 
 @each $name, $color in ('blue', #30bae7), ('red', #d74680), ('green', #15c7a8), ('orange', #eb7d4b), ('gray', #dfe8ed)
@@ -101,3 +98,17 @@ div[data-anim~=base]
 @-webkit-keyframes close-wrapper
   to
     clip: rect(auto, auto, auto, auto)
+
+
+@media screen and (max-width: $xs)
+  .section-3
+    &_item
+      width: 100%
+      &:nth-child(-n+3)
+        margin-bottom: 30px
+
+@media screen and (max-width: $md)
+  .section-3
+    &_item
+      &:nth-child(-n+2)
+        margin-bottom: 30px

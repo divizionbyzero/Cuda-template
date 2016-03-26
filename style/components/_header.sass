@@ -6,6 +6,7 @@
   &_logo
     float: left
     display: inline-block
+    margin-top: -10px
   &_nav
     float: right
     &__item
@@ -19,3 +20,19 @@
   &__button
     @extend .big-button
     @extend .orange-button
+
+@media screen and (max-width: $sm)
+  .header
+    padding: 60px 0 95px
+    &_logo
+      width: 100%
+    &_nav
+      width: 100%
+      margin: 35px 0 0
+      display: inline-flex
+      justify-content: space-between
+      &__item
+        margin: auto
+        padding: 0 2%
+    &__title
+      margin: 145px 5% 60px

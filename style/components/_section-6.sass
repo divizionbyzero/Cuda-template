@@ -1,15 +1,12 @@
 .section-6
+  @extend .section
   background-color: #3c5499
-  padding: 120px 0
-  text-align: center
   &__title
     @extend .big-title-2
     color: $white
-    margin-bottom: 45px
   &__subtitle
     @extend .subtitle
     color: $white
-    margin: 0 $margin-lr $margin-b
   &__button
     @extend .big-button
     @extend .blue-button
@@ -20,19 +17,42 @@
     &_wrap
       width: 80%
       margin: 0 auto 60px
+    &_wrap-input
+      position: relative
+      &:first-child
+        padding-right: 12.5px
+      &:nth-child(2)
+        padding-left: 12.5px
+        label
+          margin-left: 12.5px
     &__input
       background: $form
       height: 55px
       border-radius: 4px
       border: none
-      width: 49%
       display: inline-block
       margin-bottom: 25px
       font-size: $main-font-size
       line-height: 1.125
       color: $white
       padding: 1em
+      width: 100%
+      &+ label
+        color: white
+        position: absolute
+        left: 1em
+        top: 1em
+        font-size: $main-font-size
+        cursor: text
+      &+ label:after
+        content: '*'
+        color: red
+      &:invalid + label
+        display: inline-block
+      &:valid + label
+        display: none
     &__textarea
       @extend .section-6_form__input
+      margin-bottom: 0
       height: auto
       width: 100%
